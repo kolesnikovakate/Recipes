@@ -12,6 +12,10 @@
 		027A280329424A0B003A5BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027A280229424A0B003A5BA9 /* Assets.xcassets */; };
 		027A280629424A0B003A5BA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027A280529424A0B003A5BA9 /* Preview Assets.xcassets */; };
 		027A281029424A0C003A5BA9 /* RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A280F29424A0C003A5BA9 /* RecipesTests.swift */; };
+		027A2830294251CE003A5BA9 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A282F294251CE003A5BA9 /* NetworkConfig.swift */; };
+		027A2832294251E4003A5BA9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A2831294251E4003A5BA9 /* Endpoint.swift */; };
+		027A283429425200003A5BA9 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A283329425200003A5BA9 /* NetworkServiceType.swift */; };
+		027A28362942528E003A5BA9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28352942528E003A5BA9 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,10 @@
 		027A280529424A0B003A5BA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		027A280B29424A0C003A5BA9 /* RecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		027A280F29424A0C003A5BA9 /* RecipesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTests.swift; sourceTree = "<group>"; };
+		027A282F294251CE003A5BA9 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		027A2831294251E4003A5BA9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		027A283329425200003A5BA9 /* NetworkServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
+		027A28352942528E003A5BA9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				027A282B29424EAB003A5BA9 /* Application */,
+				027A282D29425010003A5BA9 /* Services */,
 				027A280029424A0B003A5BA9 /* ContentView.swift */,
 				027A280229424A0B003A5BA9 /* Assets.xcassets */,
 				027A280429424A0B003A5BA9 /* Preview Content */,
@@ -103,6 +112,25 @@
 				027A27FE29424A0B003A5BA9 /* RecipesApp.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		027A282D29425010003A5BA9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				027A282E2942501E003A5BA9 /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		027A282E2942501E003A5BA9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				027A282F294251CE003A5BA9 /* NetworkConfig.swift */,
+				027A2831294251E4003A5BA9 /* Endpoint.swift */,
+				027A283329425200003A5BA9 /* NetworkServiceType.swift */,
+				027A28352942528E003A5BA9 /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +258,10 @@
 			files = (
 				027A280129424A0B003A5BA9 /* ContentView.swift in Sources */,
 				027A27FF29424A0B003A5BA9 /* RecipesApp.swift in Sources */,
+				027A2832294251E4003A5BA9 /* Endpoint.swift in Sources */,
+				027A283429425200003A5BA9 /* NetworkServiceType.swift in Sources */,
+				027A28362942528E003A5BA9 /* NetworkService.swift in Sources */,
+				027A2830294251CE003A5BA9 /* NetworkConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
