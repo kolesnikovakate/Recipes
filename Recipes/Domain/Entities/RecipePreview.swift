@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct RecipePreviewList: Decodable {
+    let offset: Int
+    let number: Int
+    let results: [RecipePreview]
+    let totalResults: Int
+}
+
 struct RecipePreview: Decodable {
     let id: Int
     let title: String
