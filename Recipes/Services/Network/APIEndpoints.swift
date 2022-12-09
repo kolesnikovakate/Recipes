@@ -8,7 +8,7 @@
 import Foundation
 
 struct APIEndpoints {
-    static func getRecipes(with query: String) -> Endpoint<RecipePreviewList> {
+    static func getRecipes(with query: String) -> Endpoint<RecipePreviewResponse> {
         Endpoint(path: "/recipes/complexSearch",
                  method: .get,
                  queryParameters: ["query": query,

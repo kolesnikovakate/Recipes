@@ -8,7 +8,7 @@
 import Foundation
 @testable import Recipes
 
-class NetworkConfigurableMock: NetworkConfigurable {
+class NetworkConfigMock: NetworkConfigurable {
     var baseURL: URL = URL(string: "https://mock.test.com")!
     var headers: [String: String] = [:]
     var queryParameters: [String: String] = [:]

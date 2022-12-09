@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		027A27FF29424A0B003A5BA9 /* RecipesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A27FE29424A0B003A5BA9 /* RecipesApp.swift */; };
-		027A280129424A0B003A5BA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A280029424A0B003A5BA9 /* ContentView.swift */; };
 		027A280329424A0B003A5BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027A280229424A0B003A5BA9 /* Assets.xcassets */; };
 		027A280629424A0B003A5BA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027A280529424A0B003A5BA9 /* Preview Assets.xcassets */; };
-		027A281029424A0C003A5BA9 /* RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A280F29424A0C003A5BA9 /* RecipesTests.swift */; };
 		027A2830294251CE003A5BA9 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A282F294251CE003A5BA9 /* NetworkConfig.swift */; };
 		027A2832294251E4003A5BA9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A2831294251E4003A5BA9 /* Endpoint.swift */; };
 		027A283429425200003A5BA9 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A283329425200003A5BA9 /* NetworkServiceType.swift */; };
@@ -21,10 +19,16 @@
 		027A2840294258AC003A5BA9 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A283F294258AC003A5BA9 /* Ingredient.swift */; };
 		027A28422942594A003A5BA9 /* RecipePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28412942594A003A5BA9 /* RecipePreview.swift */; };
 		027A284629425A76003A5BA9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A284529425A76003A5BA9 /* NetworkServiceTests.swift */; };
-		027A284A29425AAB003A5BA9 /* NetworkConfigurableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A284929425AAB003A5BA9 /* NetworkConfigurableMock.swift */; };
-		027A284C29425ACB003A5BA9 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A284B29425ACB003A5BA9 /* URLProtocolMock.swift */; };
 		027A284F29425B9E003A5BA9 /* RecipeList.json in Resources */ = {isa = PBXBuildFile; fileRef = 027A284D29425B9E003A5BA9 /* RecipeList.json */; };
 		027A285029425B9E003A5BA9 /* RecipePreviewList.json in Resources */ = {isa = PBXBuildFile; fileRef = 027A284E29425B9E003A5BA9 /* RecipePreviewList.json */; };
+		027A285429436135003A5BA9 /* RecipesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A285329436135003A5BA9 /* RecipesListView.swift */; };
+		027A285629436199003A5BA9 /* RecipesListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A285529436199003A5BA9 /* RecipesListFeature.swift */; };
+		02A3FA2F294366EB0015EB0E /* RecipesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA2E294366EB0015EB0E /* RecipesClient.swift */; };
+		02A3FA31294370C50015EB0E /* RecipePreviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA30294370C50015EB0E /* RecipePreviewResponse.swift */; };
+		02A3FA472943F24E0015EB0E /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA462943F24E0015EB0E /* AppDIContainer.swift */; };
+		02A3FA4A2943F4AD0015EB0E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 02A3FA492943F4AD0015EB0E /* ComposableArchitecture */; };
+		02A3FA4F2943F7300015EB0E /* NetworkConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A284929425AAB003A5BA9 /* NetworkConfigMock.swift */; };
+		02A3FA502943F7350015EB0E /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A284B29425ACB003A5BA9 /* URLProtocolMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,11 +44,9 @@
 /* Begin PBXFileReference section */
 		027A27FB29424A0B003A5BA9 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027A27FE29424A0B003A5BA9 /* RecipesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesApp.swift; sourceTree = "<group>"; };
-		027A280029424A0B003A5BA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		027A280229424A0B003A5BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		027A280529424A0B003A5BA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		027A280B29424A0C003A5BA9 /* RecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		027A280F29424A0C003A5BA9 /* RecipesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTests.swift; sourceTree = "<group>"; };
 		027A282F294251CE003A5BA9 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		027A2831294251E4003A5BA9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		027A283329425200003A5BA9 /* NetworkServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
@@ -54,10 +56,15 @@
 		027A283F294258AC003A5BA9 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		027A28412942594A003A5BA9 /* RecipePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePreview.swift; sourceTree = "<group>"; };
 		027A284529425A76003A5BA9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
-		027A284929425AAB003A5BA9 /* NetworkConfigurableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurableMock.swift; sourceTree = "<group>"; };
+		027A284929425AAB003A5BA9 /* NetworkConfigMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigMock.swift; sourceTree = "<group>"; };
 		027A284B29425ACB003A5BA9 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		027A284D29425B9E003A5BA9 /* RecipeList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipeList.json; sourceTree = "<group>"; };
 		027A284E29425B9E003A5BA9 /* RecipePreviewList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipePreviewList.json; sourceTree = "<group>"; };
+		027A285329436135003A5BA9 /* RecipesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListView.swift; sourceTree = "<group>"; };
+		027A285529436199003A5BA9 /* RecipesListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListFeature.swift; sourceTree = "<group>"; };
+		02A3FA2E294366EB0015EB0E /* RecipesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesClient.swift; sourceTree = "<group>"; };
+		02A3FA30294370C50015EB0E /* RecipePreviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePreviewResponse.swift; sourceTree = "<group>"; };
+		02A3FA462943F24E0015EB0E /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A3FA4A2943F4AD0015EB0E /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,10 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				027A282B29424EAB003A5BA9 /* Application */,
-				027A283B29425773003A5BA9 /* Domain */,
 				027A282D29425010003A5BA9 /* Services */,
-				027A280029424A0B003A5BA9 /* ContentView.swift */,
-				027A280229424A0B003A5BA9 /* Assets.xcassets */,
+				027A283B29425773003A5BA9 /* Domain */,
+				027A2851294360DC003A5BA9 /* Presentation */,
+				02A3FA382943C0060015EB0E /* Resources */,
 				027A280429424A0B003A5BA9 /* Preview Content */,
 			);
 			path = Recipes;
@@ -120,9 +128,8 @@
 		027A280E29424A0C003A5BA9 /* RecipesTests */ = {
 			isa = PBXGroup;
 			children = (
-				027A284829425AA0003A5BA9 /* Mocks */,
+				02A3FA342943BAE70015EB0E /* Mocks */,
 				027A284329425A54003A5BA9 /* Services */,
-				027A280F29424A0C003A5BA9 /* RecipesTests.swift */,
 			);
 			path = RecipesTests;
 			sourceTree = "<group>";
@@ -131,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				027A27FE29424A0B003A5BA9 /* RecipesApp.swift */,
+				02A3FA462943F24E0015EB0E /* AppDIContainer.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -159,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				027A283C2942577F003A5BA9 /* Entities */,
+				02A3FA2E294366EB0015EB0E /* RecipesClient.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -166,9 +175,10 @@
 		027A283C2942577F003A5BA9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				02A3FA30294370C50015EB0E /* RecipePreviewResponse.swift */,
+				027A28412942594A003A5BA9 /* RecipePreview.swift */,
 				027A283D29425792003A5BA9 /* Recipe.swift */,
 				027A283F294258AC003A5BA9 /* Ingredient.swift */,
-				027A28412942594A003A5BA9 /* RecipePreview.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -199,13 +209,38 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		027A284829425AA0003A5BA9 /* Mocks */ = {
+		027A2851294360DC003A5BA9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				027A284929425AAB003A5BA9 /* NetworkConfigurableMock.swift */,
+				027A285229436101003A5BA9 /* RecipesList */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		027A285229436101003A5BA9 /* RecipesList */ = {
+			isa = PBXGroup;
+			children = (
+				027A285329436135003A5BA9 /* RecipesListView.swift */,
+				027A285529436199003A5BA9 /* RecipesListFeature.swift */,
+			);
+			path = RecipesList;
+			sourceTree = "<group>";
+		};
+		02A3FA342943BAE70015EB0E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				027A284929425AAB003A5BA9 /* NetworkConfigMock.swift */,
 				027A284B29425ACB003A5BA9 /* URLProtocolMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		02A3FA382943C0060015EB0E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				027A280229424A0B003A5BA9 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +260,9 @@
 			dependencies = (
 			);
 			name = Recipes;
+			packageProductDependencies = (
+				02A3FA492943F4AD0015EB0E /* ComposableArchitecture */,
+			);
 			productName = Recipes;
 			productReference = 027A27FB29424A0B003A5BA9 /* Recipes.app */;
 			productType = "com.apple.product-type.application";
@@ -276,6 +314,9 @@
 				Base,
 			);
 			mainGroup = 027A27F229424A0B003A5BA9;
+			packageReferences = (
+				02A3FA482943F4AD0015EB0E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 027A27FC29424A0B003A5BA9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,15 +374,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				027A280129424A0B003A5BA9 /* ContentView.swift in Sources */,
 				027A283A294256B4003A5BA9 /* APIEndpoints.swift in Sources */,
+				027A285629436199003A5BA9 /* RecipesListFeature.swift in Sources */,
 				027A28422942594A003A5BA9 /* RecipePreview.swift in Sources */,
 				027A2840294258AC003A5BA9 /* Ingredient.swift in Sources */,
+				027A285429436135003A5BA9 /* RecipesListView.swift in Sources */,
 				027A27FF29424A0B003A5BA9 /* RecipesApp.swift in Sources */,
 				027A2832294251E4003A5BA9 /* Endpoint.swift in Sources */,
+				02A3FA31294370C50015EB0E /* RecipePreviewResponse.swift in Sources */,
 				027A283429425200003A5BA9 /* NetworkServiceType.swift in Sources */,
 				027A28362942528E003A5BA9 /* NetworkService.swift in Sources */,
 				027A2830294251CE003A5BA9 /* NetworkConfig.swift in Sources */,
+				02A3FA2F294366EB0015EB0E /* RecipesClient.swift in Sources */,
+				02A3FA472943F24E0015EB0E /* AppDIContainer.swift in Sources */,
 				027A283E29425792003A5BA9 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,10 +395,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				027A284A29425AAB003A5BA9 /* NetworkConfigurableMock.swift in Sources */,
+				02A3FA502943F7350015EB0E /* URLProtocolMock.swift in Sources */,
+				02A3FA4F2943F7300015EB0E /* NetworkConfigMock.swift in Sources */,
 				027A284629425A76003A5BA9 /* NetworkServiceTests.swift in Sources */,
-				027A281029424A0C003A5BA9 /* RecipesTests.swift in Sources */,
-				027A284C29425ACB003A5BA9 /* URLProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +655,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		02A3FA482943F4AD0015EB0E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture#examples";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		02A3FA492943F4AD0015EB0E /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02A3FA482943F4AD0015EB0E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 027A27F329424A0B003A5BA9 /* Project object */;
 }

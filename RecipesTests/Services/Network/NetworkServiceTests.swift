@@ -11,7 +11,7 @@ import Combine
 @testable import Recipes
 
 class NetworkServiceTests: XCTestCase {
-    private let config = NetworkConfigurableMock()
+    private let config = NetworkConfigMock()
     private lazy var session: URLSession = {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [URLProtocolMock.self]
