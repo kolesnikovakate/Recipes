@@ -31,15 +31,19 @@ struct RecipesListView: View {
                     
                     List {
                         ForEach(viewStore.results) { recipe in
-                            VStack(alignment: .leading) {
-                                Button(action: { viewStore.send(.searchResultTapped(recipe)) }) {
-                                    HStack {
-                                        Text(recipe.title)
-                                    }
-                                }
+                            Button(action: { viewStore.send(.searchResultTapped(recipe)) }) {
+                                RecipesListRow(recipe: recipe)
                             }
+                            .listRowBackground(Color.background)
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets(top: 8,
+                                                      leading: 16,
+                                                      bottom: 8,
+                                                      trailing: 16))
                         }
                     }
+                    .scrollContentBackground(.hidden)
+                    .listStyle(.plain)
                     
                     Button("Recipes API provided by spoonacular") {
                         UIApplication.shared.open(URL(string: "https://spoonacular.com/food-api")!)
@@ -47,6 +51,7 @@ struct RecipesListView: View {
                     .foregroundColor(.gray)
                     .padding(.all, 16)
                 }
+                .background(Color.background)
                 .navigationTitle("Search")
             }
             .navigationViewStyle(.stack)

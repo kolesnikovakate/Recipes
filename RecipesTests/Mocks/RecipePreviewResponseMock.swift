@@ -6,12 +6,12 @@
 //
 
 import Foundation
-@testable import Recipes
+// @testable import Recipes
 
 // swiftlint:disable all
-struct RecipePreviewResponseMock {
+class RecipePreviewResponseMock {
     static var mock: RecipePreviewResponse = {
-        let url = Bundle(for: NetworkServiceTests.self).url(forResource: "RecipePreviewList", withExtension: "json")!
+        let url = Bundle(for: RecipePreviewResponseMock.self).url(forResource: "RecipePreviewList", withExtension: "json")!
         let data = try! Data(contentsOf: url)
         let response = try! JSONDecoder().decode(RecipePreviewResponse.self, from: data)
         return response

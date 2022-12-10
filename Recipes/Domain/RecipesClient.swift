@@ -20,6 +20,7 @@ final class RecipesClient: RecipesClientType {
     }
     
     func getRecipes(_ query: String) async throws -> RecipePreviewResponse {
-        return try await networkService.request(APIEndpoints.getRecipes(with: query))
+        return RecipePreviewResponseMock.mock
+//        return try await networkService.request(APIEndpoints.getRecipes(with: query))
     }
 }
