@@ -1,0 +1,8 @@
+# sourcery --config "RecipesTests/Mocks/GeneratedMocks/sourcery.yml" --verbose
+
+sources:
+    - ../../../Recipes/
+templates:
+    - AutoMockable.stencil
+output:
+    ./

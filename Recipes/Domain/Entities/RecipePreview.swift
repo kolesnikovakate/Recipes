@@ -7,14 +7,7 @@
 
 import Foundation
 
-struct RecipePreviewList: Decodable {
-    let offset: Int
-    let number: Int
-    let results: [RecipePreview]
-    let totalResults: Int
-}
-
-struct RecipePreview: Decodable {
+struct RecipePreview: Decodable, Equatable, Identifiable {
     let id: Int
     let title: String
     let image: String
