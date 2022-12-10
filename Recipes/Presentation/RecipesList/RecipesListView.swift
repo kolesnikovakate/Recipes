@@ -55,11 +55,8 @@ struct RecipesListView: View {
                 .navigationTitle("Search")
             }
             .navigationViewStyle(.stack)
-            .task(id: viewStore.searchQuery) {
-                do {
-                    try await Task.sleep(nanoseconds: NSEC_PER_SEC / 3)
-                    await viewStore.send(.searchQueryChangeDebounced).finish()
-                } catch {}
+            .onAppear {
+                viewStore.send(.reload)
             }
         }
     }

@@ -13,8 +13,9 @@ import XCTest
 @MainActor
 final class RecipesListFeatureTests: XCTestCase {
     let recipesClient = RecipesClientTypeMock()
+    let mainQueue = DispatchQueue.test
     
-    func testSearchAndClearQuery() async {
+    func testReload() async {
         let response = RecipePreviewResponseMock.mock
         recipesClient.getRecipesReturnValue = response
         
@@ -22,18 +23,54 @@ final class RecipesListFeatureTests: XCTestCase {
             initialState: RecipesListFeature.State(),
             reducer: RecipesListFeature(recipesClient: recipesClient)
         )
+        store.dependencies.mainQueue = mainQueue.eraseToAnyScheduler()
+        
+        _ = await store.send(.reload)
+        await store.receive(.searchQueryChangeDebounced)
+        await store.receive(.searchResponse(.success(response))) {
+            $0.results = response.results
+        }
+    }
+    
+    func testSearchQuery() async {
+        let response = RecipePreviewResponseMock.mock
+        recipesClient.getRecipesReturnValue = response
+        
+        let store = TestStore(
+            initialState: RecipesListFeature.State(),
+            reducer: RecipesListFeature(recipesClient: recipesClient)
+        )
+        store.dependencies.mainQueue = mainQueue.eraseToAnyScheduler()
         
         _ = await store.send(.searchQueryChanged("S")) {
             $0.searchQuery = "S"
         }
-        _ = await store.send(.searchQueryChangeDebounced)
+        await mainQueue.advance(by: 1)
+        await store.receive(.searchQueryChangeDebounced)
         await store.receive(.searchResponse(.success(response))) {
             $0.results = response.results
         }
-        _ = await store.send(.searchQueryChanged("")) {
-            $0.results = []
-            $0.searchQuery = ""
+    }
+    
+    func testSearchQueryDuplicates() async {
+        let response = RecipePreviewResponseMock.mock
+        recipesClient.getRecipesReturnValue = response
+        
+        let store = TestStore(
+            initialState: RecipesListFeature.State(),
+            reducer: RecipesListFeature(recipesClient: recipesClient)
+        )
+        store.dependencies.mainQueue = mainQueue.eraseToAnyScheduler()
+        
+        _ = await store.send(.searchQueryChanged("S")) {
+            $0.searchQuery = "S"
         }
+        await mainQueue.advance(by: 1)
+        await store.receive(.searchQueryChangeDebounced)
+        await store.receive(.searchResponse(.success(response))) {
+            $0.results = response.results
+        }
+        _ = await store.send(.searchQueryChanged("S"))
     }
     
     func testSearchFailure() async {
@@ -44,19 +81,25 @@ final class RecipesListFeatureTests: XCTestCase {
             initialState: RecipesListFeature.State(),
             reducer: RecipesListFeature(recipesClient: recipesClient)
         )
+        store.dependencies.mainQueue = mainQueue.eraseToAnyScheduler()
         
         _ = await store.send(.searchQueryChanged("S")) {
             $0.searchQuery = "S"
         }
-        _ = await store.send(.searchQueryChangeDebounced)
+        await mainQueue.advance(by: 1)
+        await store.receive(.searchQueryChangeDebounced)
         await store.receive(.searchResponse(.failure(error)))
     }
     
-    func testClearQueryCancelsInFlightSearchRequest() async {
+    func testSearchQueryCancelsInFlightSearchRequest() async {
+        let response = RecipePreviewResponseMock.mock
+        recipesClient.getRecipesReturnValue = response
+        
         let store = TestStore(
             initialState: RecipesListFeature.State(),
             reducer: RecipesListFeature(recipesClient: recipesClient)
         )
+        store.dependencies.mainQueue = mainQueue.eraseToAnyScheduler()
         
         let searchQueryChanged = await store.send(.searchQueryChanged("S")) {
             $0.searchQuery = "S"
@@ -64,6 +107,11 @@ final class RecipesListFeatureTests: XCTestCase {
         await searchQueryChanged.cancel()
         _ = await store.send(.searchQueryChanged("")) {
             $0.searchQuery = ""
+        }
+        await mainQueue.advance(by: 1)
+        await store.receive(.searchQueryChangeDebounced)
+        await store.receive(.searchResponse(.success(response))) {
+            $0.results = response.results
         }
     }
 }

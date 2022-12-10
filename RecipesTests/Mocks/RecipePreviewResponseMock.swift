@@ -6,7 +6,7 @@
 //
 
 import Foundation
-// @testable import Recipes
+@testable import Recipes
 
 // swiftlint:disable all
 class RecipePreviewResponseMock {

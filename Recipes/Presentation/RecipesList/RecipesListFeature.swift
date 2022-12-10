@@ -15,12 +15,14 @@ struct RecipesListFeature: ReducerProtocol {
     }
     
     enum Action: Equatable {
+        case reload
         case searchQueryChanged(String)
         case searchQueryChangeDebounced
         case searchResponse(TaskResult<RecipePreviewResponse>)
         case searchResultTapped(RecipePreview)
     }
     
+    @Dependency(\.mainQueue) var mainQueue
     let recipesClient: RecipesClientType
     
     init(recipesClient: RecipesClientType) {
@@ -31,20 +33,18 @@ struct RecipesListFeature: ReducerProtocol {
     
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
         switch action {
+        case .reload:
+            return Effect(value: .searchQueryChangeDebounced)
             
         case let .searchQueryChanged(query):
-            state.searchQuery = query
-            
-            guard !query.isEmpty else {
-                state.results = []
-                return .cancel(id: SearchRecipeID.self)
-            }
-            return .none
-            
-        case .searchQueryChangeDebounced:
-            guard !state.searchQuery.isEmpty else {
+            guard state.searchQuery != query else {
                 return .none
             }
+            state.searchQuery = query
+            return Effect(value: .searchQueryChangeDebounced)
+                .debounce(id: SearchRecipeID.self, for: 1, scheduler: mainQueue)
+            
+        case .searchQueryChangeDebounced:
             return .task { [query = state.searchQuery] in
                 await .searchResponse(TaskResult {
                     try await self.recipesClient.getRecipes(query)

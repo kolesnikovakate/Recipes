@@ -37,9 +37,6 @@
 		02A3FA612943FBD40015EB0E /* TestsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA602943FBD40015EB0E /* TestsError.swift */; };
 		02A3FA652943FC1E0015EB0E /* RecipesListFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA642943FC1E0015EB0E /* RecipesListFeatureTests.swift */; };
 		02A3FA672943FCFD0015EB0E /* RecipePreviewResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA662943FCFD0015EB0E /* RecipePreviewResponseMock.swift */; };
-		02A3FA682944F7040015EB0E /* RecipePreviewResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA662943FCFD0015EB0E /* RecipePreviewResponseMock.swift */; };
-		02A3FA692944F7B40015EB0E /* RecipeList.json in Resources */ = {isa = PBXBuildFile; fileRef = 027A284D29425B9E003A5BA9 /* RecipeList.json */; };
-		02A3FA6A2944F83A0015EB0E /* RecipePreviewList.json in Resources */ = {isa = PBXBuildFile; fileRef = 027A284E29425B9E003A5BA9 /* RecipePreviewList.json */; };
 		02F5609B2944F8F1007E3C34 /* RecipesListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5609A2944F8F1007E3C34 /* RecipesListRow.swift */; };
 		02F5609E2944F962007E3C34 /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5609D2944F962007E3C34 /* TextModifiers.swift */; };
 		02F560A02944FCB3007E3C34 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5609F2944FCB3007E3C34 /* Colors.swift */; };
@@ -416,10 +413,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02A3FA6A2944F83A0015EB0E /* RecipePreviewList.json in Resources */,
 				027A280629424A0B003A5BA9 /* Preview Assets.xcassets in Resources */,
 				027A280329424A0B003A5BA9 /* Assets.xcassets in Resources */,
-				02A3FA692944F7B40015EB0E /* RecipeList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +471,6 @@
 				027A2830294251CE003A5BA9 /* NetworkConfig.swift in Sources */,
 				02F5609E2944F962007E3C34 /* TextModifiers.swift in Sources */,
 				02A3FA2F294366EB0015EB0E /* RecipesClient.swift in Sources */,
-				02A3FA682944F7040015EB0E /* RecipePreviewResponseMock.swift in Sources */,
 				02A3FA472943F24E0015EB0E /* AppDIContainer.swift in Sources */,
 				02F5609B2944F8F1007E3C34 /* RecipesListRow.swift in Sources */,
 				027A283E29425792003A5BA9 /* Recipe.swift in Sources */,
