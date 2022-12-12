@@ -17,4 +17,13 @@ class RecipePreviewResponseMock {
         return response
     }()
 }
+
+class RecipeMock {
+    static var mock: Recipe = {
+        let url = Bundle(for: RecipePreviewResponseMock.self).url(forResource: "Recipe", withExtension: "json")!
+        let data = try! Data(contentsOf: url)
+        let response = try! JSONDecoder().decode(Recipe.self, from: data)
+        return response
+    }()
+}
 // swiftlint:enable all

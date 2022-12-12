@@ -45,7 +45,7 @@ struct RecipesListView: View {
                                 tag: recipe.id,
                                 selection: viewStore.binding(
                                     get: \.selection?.id,
-                                    send: RecipesListFeature.Action.searchResultTapped(id:)
+                                    send: RecipesListFeature.Action.recipeTapped(id:)
                                 )
                             ) {
                                 RecipesListRow(recipe: recipe)

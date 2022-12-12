@@ -40,4 +40,33 @@ final class RecipesClientTests: XCTestCase {
         
         XCTAssertEqual(networkService.requestCalled, true)
     }
+    
+    func test_getRecipeFinishedSuccessfully() async throws {
+        let recipe = RecipeMock.mock
+        networkService.response = recipe
+        
+        do {
+            let result = try await recipesClient.getRecipe(1)
+            XCTAssertEqual(result, recipe)
+        } catch {
+            XCTFail("Expected recipe array, but failed \(error).")
+        }
+    }
+    
+    func test_getRecipeFailedWithError() async throws {
+        networkService.requestThrowableError = NetworkError.invalidResponse
+        
+        do {
+            _ = try await recipesClient.getRecipe(1)
+            XCTFail("Expected to throw while awaiting, but succeeded")
+        } catch {
+            guard let networkError = error as? NetworkError,
+                  case NetworkError.invalidResponse = networkError else {
+                XCTFail("Expected NetworkError, but failed \(error).")
+                return
+            }
+        }
+        
+        XCTAssertEqual(networkService.requestCalled, true)
+    }
 }

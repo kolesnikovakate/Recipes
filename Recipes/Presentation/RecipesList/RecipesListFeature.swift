@@ -23,8 +23,8 @@ struct RecipesListFeature: ReducerProtocol {
         case searchResponse(TaskResult<RecipePreviewResponse>)
         
         case recipe(RecipeFeature.Action)
-        case searchResultTapped(id: Int?)
-        case openRecipe(RecipeFeature.State)
+        case recipeTapped(id: Int?)
+        case openRecipe(TaskResult<RecipeFeature.State>)
     }
     
     @Dependency(\.mainQueue) var mainQueue
@@ -67,19 +67,25 @@ struct RecipesListFeature: ReducerProtocol {
             state.results = response.results
             return .none
             
-        case let .searchResultTapped(id: .some(id)):
+        case let .recipeTapped(id: .some(id)):
             state.selection = Identified(nil, id: id)
             return .task {
-                try await Task.sleep(nanoseconds: UInt64(2 * Double(NSEC_PER_SEC)))
-                return .openRecipe(Recipe(id: 1, title: "title", image: "https://www.kwestiasmaku.com/sites/v123.kwestiasmaku.com/files/lasagne_bolognese_01.jpg", servings: 2, readyInMinutes: 20, summary: "summary", extendedIngredients: []))
+                await .openRecipe(TaskResult {
+                    try await self.recipesClient.getRecipe(id)
+                })
             }
-            .cancellable(id: LoadRecipeID.self, cancelInFlight: true)
+            .cancellable(id: LoadRecipeID.self)
             
-        case .searchResultTapped(id: .none):
+        case .recipeTapped(id: .none):
             state.selection = nil
             return .cancel(id: LoadRecipeID.self)
             
-        case let .openRecipe(recipe):
+        case .openRecipe(.failure):
+            state.selection = nil
+            // TODO: show error
+            return .none
+            
+        case let .openRecipe(.success(recipe)):
             state.selection = Identified(recipe, id: recipe.id)
             return .none
             

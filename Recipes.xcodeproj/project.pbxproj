@@ -19,7 +19,7 @@
 		027A2840294258AC003A5BA9 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A283F294258AC003A5BA9 /* Ingredient.swift */; };
 		027A28422942594A003A5BA9 /* RecipePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28412942594A003A5BA9 /* RecipePreview.swift */; };
 		027A284629425A76003A5BA9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A284529425A76003A5BA9 /* NetworkServiceTests.swift */; };
-		027A284F29425B9E003A5BA9 /* RecipeList.json in Resources */ = {isa = PBXBuildFile; fileRef = 027A284D29425B9E003A5BA9 /* RecipeList.json */; };
+		027A284F29425B9E003A5BA9 /* Recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 027A284D29425B9E003A5BA9 /* Recipe.json */; };
 		027A285029425B9E003A5BA9 /* RecipePreviewList.json in Resources */ = {isa = PBXBuildFile; fileRef = 027A284E29425B9E003A5BA9 /* RecipePreviewList.json */; };
 		027A285429436135003A5BA9 /* RecipesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A285329436135003A5BA9 /* RecipesListView.swift */; };
 		027A285629436199003A5BA9 /* RecipesListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A285529436199003A5BA9 /* RecipesListFeature.swift */; };
@@ -71,7 +71,7 @@
 		027A284529425A76003A5BA9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		027A284929425AAB003A5BA9 /* NetworkConfigMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigMock.swift; sourceTree = "<group>"; };
 		027A284B29425ACB003A5BA9 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
-		027A284D29425B9E003A5BA9 /* RecipeList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipeList.json; sourceTree = "<group>"; };
+		027A284D29425B9E003A5BA9 /* Recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Recipe.json; sourceTree = "<group>"; };
 		027A284E29425B9E003A5BA9 /* RecipePreviewList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipePreviewList.json; sourceTree = "<group>"; };
 		027A285329436135003A5BA9 /* RecipesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListView.swift; sourceTree = "<group>"; };
 		027A285529436199003A5BA9 /* RecipesListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListFeature.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 		027A284429425A5B003A5BA9 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				027A284D29425B9E003A5BA9 /* RecipeList.json */,
+				027A284D29425B9E003A5BA9 /* Recipe.json */,
 				027A284E29425B9E003A5BA9 /* RecipePreviewList.json */,
 			);
 			path = Responses;
@@ -438,7 +438,7 @@
 			files = (
 				027A285029425B9E003A5BA9 /* RecipePreviewList.json in Resources */,
 				02A3FA5A2943FBBA0015EB0E /* sourcery.yml in Resources */,
-				027A284F29425B9E003A5BA9 /* RecipeList.json in Resources */,
+				027A284F29425B9E003A5BA9 /* Recipe.json in Resources */,
 				02A3FA5C2943FBBA0015EB0E /* AutoMockable.stencil in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

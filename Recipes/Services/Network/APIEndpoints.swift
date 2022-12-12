@@ -13,7 +13,8 @@ struct APIEndpoints {
                  method: .get,
                  queryParameters: ["query": query,
                                    "sort": "popularity",
-                                   "sortDirection": "asc"])
+                                   "sortDirection": "asc",
+                                   "cuisine": "italian"])
     }
     
     static func getRecipe(by id: Int) -> Endpoint<Recipe> {

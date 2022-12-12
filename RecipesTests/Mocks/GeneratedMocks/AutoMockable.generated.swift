@@ -53,6 +53,32 @@ class RecipesClientTypeMock: RecipesClientType {
         }
     }
 
+    //MARK: - getRecipe
+
+    var getRecipeThrowableError: Error?
+    var getRecipeCallsCount = 0
+    var getRecipeCalled: Bool {
+        return getRecipeCallsCount > 0
+    }
+    var getRecipeReceivedId: Int?
+    var getRecipeReceivedInvocations: [Int] = []
+    var getRecipeReturnValue: Recipe!
+    var getRecipeClosure: ((Int) async throws -> Recipe)?
+
+    func getRecipe(_ id: Int) async throws -> Recipe {
+        if let error = getRecipeThrowableError {
+            throw error
+        }
+        getRecipeCallsCount += 1
+        getRecipeReceivedId = id
+        getRecipeReceivedInvocations.append(id)
+        if let getRecipeClosure = getRecipeClosure {
+            return try await getRecipeClosure(id)
+        } else {
+            return getRecipeReturnValue
+        }
+    }
+
 }
 
 // swiftlint:enable all
