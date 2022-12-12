@@ -31,9 +31,26 @@ struct RecipesListView: View {
                     
                     List {
                         ForEach(viewStore.results) { recipe in
-                            Button(action: { viewStore.send(.searchResultTapped(recipe)) }) {
+                            NavigationLink(
+                                destination: IfLetStore(
+                                    self.store.scope(
+                                        state: \.selection?.value,
+                                        action: RecipesListFeature.Action.recipe
+                                    )
+                                ) {
+                                    RecipeView(store: $0)
+                                } else: {
+                                    ProgressView()
+                                },
+                                tag: recipe.id,
+                                selection: viewStore.binding(
+                                    get: \.selection?.id,
+                                    send: RecipesListFeature.Action.searchResultTapped(id:)
+                                )
+                            ) {
                                 RecipesListRow(recipe: recipe)
                             }
+                            .buttonStyle(.plain)
                             .listRowBackground(Color.background)
                             .listRowSeparator(.hidden)
                             .listRowInsets(EdgeInsets(top: 8,

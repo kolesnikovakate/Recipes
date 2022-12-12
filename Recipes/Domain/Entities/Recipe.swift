@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Recipe: Decodable {
+struct Recipe: Decodable, Equatable {
     let id: Int
     let title: String
     let image: String
@@ -15,4 +15,8 @@ struct Recipe: Decodable {
     let readyInMinutes: Int
     let summary: String
     let extendedIngredients: [Ingredient]
+    
+    static func == (lhs: Recipe, rhs: Recipe) -> Bool {
+        lhs.id == rhs.id
+    }
 }
