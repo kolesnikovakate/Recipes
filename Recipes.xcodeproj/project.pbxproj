@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02783E192947F30F0069DDFB /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02783E182947F30F0069DDFB /* IngredientsView.swift */; };
+		02783E1B2947FDC90069DDFB /* RecipeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02783E1A2947FDC90069DDFB /* RecipeTitleView.swift */; };
 		027A27FF29424A0B003A5BA9 /* RecipesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A27FE29424A0B003A5BA9 /* RecipesApp.swift */; };
 		027A280329424A0B003A5BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027A280229424A0B003A5BA9 /* Assets.xcassets */; };
 		027A280629424A0B003A5BA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027A280529424A0B003A5BA9 /* Preview Assets.xcassets */; };
@@ -42,6 +44,7 @@
 		02F560A02944FCB3007E3C34 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5609F2944FCB3007E3C34 /* Colors.swift */; };
 		02F560AF29469BF6007E3C34 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F560AE29469BF6007E3C34 /* RecipeView.swift */; };
 		02F560B129469C00007E3C34 /* RecipeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F560B029469C00007E3C34 /* RecipeFeature.swift */; };
+		02F560B62947DD0B007E3C34 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F560B52947DD0B007E3C34 /* SegmentedControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02783E182947F30F0069DDFB /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
+		02783E1A2947FDC90069DDFB /* RecipeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTitleView.swift; sourceTree = "<group>"; };
 		027A27FB29424A0B003A5BA9 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027A27FE29424A0B003A5BA9 /* RecipesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesApp.swift; sourceTree = "<group>"; };
 		027A280229424A0B003A5BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +96,7 @@
 		02F5609F2944FCB3007E3C34 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		02F560AE29469BF6007E3C34 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		02F560B029469C00007E3C34 /* RecipeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeature.swift; sourceTree = "<group>"; };
+		02F560B52947DD0B007E3C34 /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,10 +338,21 @@
 		02F560AD29469BE7007E3C34 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
+				02F560B42947DCFE007E3C34 /* Views */,
 				02F560AE29469BF6007E3C34 /* RecipeView.swift */,
 				02F560B029469C00007E3C34 /* RecipeFeature.swift */,
 			);
 			path = Recipe;
+			sourceTree = "<group>";
+		};
+		02F560B42947DCFE007E3C34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02783E1A2947FDC90069DDFB /* RecipeTitleView.swift */,
+				02F560B52947DD0B007E3C34 /* SegmentedControlView.swift */,
+				02783E182947F30F0069DDFB /* IngredientsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,10 +493,13 @@
 				02F560A02944FCB3007E3C34 /* Colors.swift in Sources */,
 				027A285629436199003A5BA9 /* RecipesListFeature.swift in Sources */,
 				027A28422942594A003A5BA9 /* RecipePreview.swift in Sources */,
+				02F560B62947DD0B007E3C34 /* SegmentedControlView.swift in Sources */,
 				02F560B129469C00007E3C34 /* RecipeFeature.swift in Sources */,
 				027A2840294258AC003A5BA9 /* Ingredient.swift in Sources */,
 				027A285429436135003A5BA9 /* RecipesListView.swift in Sources */,
+				02783E1B2947FDC90069DDFB /* RecipeTitleView.swift in Sources */,
 				027A27FF29424A0B003A5BA9 /* RecipesApp.swift in Sources */,
+				02783E192947F30F0069DDFB /* IngredientsView.swift in Sources */,
 				027A2832294251E4003A5BA9 /* Endpoint.swift in Sources */,
 				02A3FA31294370C50015EB0E /* RecipePreviewResponse.swift in Sources */,
 				027A283429425200003A5BA9 /* NetworkServiceType.swift in Sources */,

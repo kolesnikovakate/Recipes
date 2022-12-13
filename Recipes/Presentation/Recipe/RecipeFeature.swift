@@ -6,14 +6,30 @@
 //
 
 import ComposableArchitecture
-import Foundation
+import SwiftUI
 
 struct RecipeFeature: ReducerProtocol {
-    typealias State = Recipe
+    enum Tabs: LocalizedStringKey, CaseIterable, Hashable {
+        case ingredients = "Ingredients"
+        case steps = "Steps"
+    }
     
-    enum Action: Equatable { }
+    struct State: Equatable {
+        var recipe: Recipe
+        var selectedTab = Tabs.ingredients
+    }
+    
+    enum Action: Equatable {
+        case select(tab: LocalizedStringKey)
+    }
     
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
-        
+        switch action {
+        case .select(let tabValue):
+            if let tab = Tabs(rawValue: tabValue) {
+                state.selectedTab = tab
+            }
+            return .none
+        }
     }
 }

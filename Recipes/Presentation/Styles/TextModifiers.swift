@@ -25,12 +25,6 @@ struct LargeTitle: ViewModifier {
     }
 }
 
-struct SmallTitle: ViewModifier {
-    func body(content: Content) -> some View {
-        content.font(.system(size: 12)).foregroundColor(Color.gray)
-    }
-}
-
 extension View {
     func textTitle() -> some View {
         self.modifier(TextTitle())
@@ -42,9 +36,5 @@ extension View {
     
     func largeTitle() -> some View {
         self.modifier(LargeTitle())
-    }
-    
-    func smallTitle() -> some View {
-        self.modifier(SmallTitle())
     }
 }

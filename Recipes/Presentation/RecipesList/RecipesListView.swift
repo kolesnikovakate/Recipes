@@ -72,6 +72,7 @@ struct RecipesListView: View {
                 .navigationTitle("Search")
             }
             .navigationViewStyle(.stack)
+            .accentColor(.orange)
             .onAppear {
                 viewStore.send(.reload)
             }

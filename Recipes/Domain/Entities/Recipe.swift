@@ -14,6 +14,7 @@ struct Recipe: Decodable, Equatable {
     let servings: Int
     let readyInMinutes: Int
     let summary: String
+    let aggregateLikes: Int
     let extendedIngredients: [Ingredient]
     
     static func == (lhs: Recipe, rhs: Recipe) -> Bool {

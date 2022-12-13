@@ -129,7 +129,7 @@ final class RecipesListFeatureTests: XCTestCase {
             $0.selection = Identified(nil, id: recipe.id)
         }
         await store.receive(.openRecipe(.success(recipe))) {
-            $0.selection = Identified(recipe, id: recipe.id)
+            $0.selection = Identified(RecipeFeature.State(recipe: recipe), id: recipe.id)
         }
     }
     

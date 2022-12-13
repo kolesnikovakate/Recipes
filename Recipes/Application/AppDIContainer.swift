@@ -23,5 +23,5 @@ final class AppDIContainer: AppDependencyProvider {
     }()
     
     lazy var recipesClient: RecipesClientType = MockRecipesClient()
-    //RecipesClient(networkService: networkService)
+    // RecipesClient(networkService: networkService)
 }
