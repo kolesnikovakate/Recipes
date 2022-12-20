@@ -18,7 +18,7 @@ struct RecipesListView: View {
                     HStack {
                         Image(systemName: "magnifyingglass")
                         TextField(
-                            "Pasta, Bruschetta, ...",
+                            "SearchPlaceholder".localized,
                             text: viewStore.binding(
                                 get: \.searchQuery, send: RecipesListFeature.Action.searchQueryChanged
                             )
@@ -62,14 +62,14 @@ struct RecipesListView: View {
                     .scrollContentBackground(.hidden)
                     .listStyle(.plain)
                     
-                    Button("Recipes API provided by spoonacular") {
+                    Button("APIProviderFooterText".localized) {
                         UIApplication.shared.open(URL(string: "https://spoonacular.com/food-api")!)
                     }
                     .foregroundColor(.gray)
                     .padding(.all, 16)
                 }
                 .background(Color.background)
-                .navigationTitle("Search")
+                .navigationTitle("Search".localized)
             }
             .navigationViewStyle(.stack)
             .accentColor(.orange)

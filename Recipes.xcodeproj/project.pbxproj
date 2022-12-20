@@ -25,6 +25,9 @@
 		027A285029425B9E003A5BA9 /* RecipePreviewList.json in Resources */ = {isa = PBXBuildFile; fileRef = 027A284E29425B9E003A5BA9 /* RecipePreviewList.json */; };
 		027A285429436135003A5BA9 /* RecipesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A285329436135003A5BA9 /* RecipesListView.swift */; };
 		027A285629436199003A5BA9 /* RecipesListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A285529436199003A5BA9 /* RecipesListFeature.swift */; };
+		027D65332951DD6C00003986 /* RecipeFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D65322951DD6C00003986 /* RecipeFeatureTests.swift */; };
+		027D65372951E07C00003986 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D65362951E07C00003986 /* String+Extensions.swift */; };
+		027D65392951E0CE00003986 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 027D65382951E0CE00003986 /* Localizable.strings */; };
 		02A3FA2F294366EB0015EB0E /* RecipesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA2E294366EB0015EB0E /* RecipesClient.swift */; };
 		02A3FA31294370C50015EB0E /* RecipePreviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA30294370C50015EB0E /* RecipePreviewResponse.swift */; };
 		02A3FA472943F24E0015EB0E /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA462943F24E0015EB0E /* AppDIContainer.swift */; };
@@ -80,6 +83,9 @@
 		027A284E29425B9E003A5BA9 /* RecipePreviewList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipePreviewList.json; sourceTree = "<group>"; };
 		027A285329436135003A5BA9 /* RecipesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListView.swift; sourceTree = "<group>"; };
 		027A285529436199003A5BA9 /* RecipesListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListFeature.swift; sourceTree = "<group>"; };
+		027D65322951DD6C00003986 /* RecipeFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeatureTests.swift; sourceTree = "<group>"; };
+		027D65362951E07C00003986 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		027D65382951E0CE00003986 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		02A3FA2E294366EB0015EB0E /* RecipesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesClient.swift; sourceTree = "<group>"; };
 		02A3FA30294370C50015EB0E /* RecipePreviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePreviewResponse.swift; sourceTree = "<group>"; };
 		02A3FA462943F24E0015EB0E /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				027A282B29424EAB003A5BA9 /* Application */,
+				027D65342951E06100003986 /* Common */,
 				027A282D29425010003A5BA9 /* Services */,
 				027A283B29425773003A5BA9 /* Domain */,
 				027A2851294360DC003A5BA9 /* Presentation */,
@@ -264,6 +271,22 @@
 			path = RecipesList;
 			sourceTree = "<group>";
 		};
+		027D65342951E06100003986 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				027D65352951E07000003986 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		027D65352951E07000003986 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				027D65362951E07C00003986 /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		02A3FA342943BAE70015EB0E /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				027A280229424A0B003A5BA9 /* Assets.xcassets */,
+				027D65382951E0CE00003986 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -322,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				02A3FA642943FC1E0015EB0E /* RecipesListFeatureTests.swift */,
+				027D65322951DD6C00003986 /* RecipeFeatureTests.swift */,
 			);
 			path = RecipesList;
 			sourceTree = "<group>";
@@ -445,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				027A280629424A0B003A5BA9 /* Preview Assets.xcassets in Resources */,
+				027D65392951E0CE00003986 /* Localizable.strings in Resources */,
 				027A280329424A0B003A5BA9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +516,7 @@
 			files = (
 				02F560AF29469BF6007E3C34 /* RecipeView.swift in Sources */,
 				027A283A294256B4003A5BA9 /* APIEndpoints.swift in Sources */,
+				027D65372951E07C00003986 /* String+Extensions.swift in Sources */,
 				02F560A02944FCB3007E3C34 /* Colors.swift in Sources */,
 				027A285629436199003A5BA9 /* RecipesListFeature.swift in Sources */,
 				027A28422942594A003A5BA9 /* RecipePreview.swift in Sources */,
@@ -521,6 +548,7 @@
 				02A3FA552943FBB00015EB0E /* RecipesClientTests.swift in Sources */,
 				02A3FA5B2943FBBA0015EB0E /* AutoMockable.generated.swift in Sources */,
 				02A3FA672943FCFD0015EB0E /* RecipePreviewResponseMock.swift in Sources */,
+				027D65332951DD6C00003986 /* RecipeFeatureTests.swift in Sources */,
 				02A3FA502943F7350015EB0E /* URLProtocolMock.swift in Sources */,
 				02A3FA612943FBD40015EB0E /* TestsError.swift in Sources */,
 				02A3FA4F2943F7300015EB0E /* NetworkConfigMock.swift in Sources */,

@@ -24,7 +24,7 @@ struct RecipeTitleView: View {
             HStack {
                 VStack(spacing: 20) {
                     Image("ic_clock")
-                    Text("\(recipe.readyInMinutes) min").subtextTitle()
+                    Text("\(recipe.readyInMinutes) \("min".localized)").subtextTitle()
                 }
                 .frame(maxWidth: .infinity)
                 
@@ -40,7 +40,7 @@ struct RecipeTitleView: View {
                 
                 VStack(spacing: 20) {
                     Image("ic_restaurant")
-                    Text("Serves \(recipe.servings)").subtextTitle()
+                    Text("\("Serves".localized) \(recipe.servings)").subtextTitle()
                 }
                 .frame(maxWidth: .infinity)
             }
