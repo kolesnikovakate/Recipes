@@ -67,7 +67,7 @@ struct RecipesListView: View {
                     .listStyle(.plain)
                     
                     Button("APIProviderFooterText".localized) {
-                        UIApplication.shared.open(URL(string: "https://spoonacular.com/food-api")!)
+                        viewStore.send(.openApiProviderPage)
                     }
                     .foregroundColor(.gray)
                     .padding(.all, 16)

@@ -6,9 +6,11 @@
 //
 
 import ComposableArchitecture
-import Foundation
+import UIKit
 
 struct RecipesListFeature: ReducerProtocol {
+    private let apiProvider = "https://spoonacular.com/food-api"
+    
     struct State: Equatable {
         var selection: Identified<Int, RecipeFeature.State?>?
         
@@ -26,6 +28,8 @@ struct RecipesListFeature: ReducerProtocol {
         case recipe(RecipeFeature.Action)
         case recipeTapped(id: Int?)
         case openRecipe(TaskResult<Recipe>)
+        
+        case openApiProviderPage
     }
     
     @Dependency(\.mainQueue) var mainQueue
@@ -93,6 +97,10 @@ struct RecipesListFeature: ReducerProtocol {
                 
             case let .openRecipe(.success(recipe)):
                 state.selection = Identified(RecipeFeature.State(recipe: recipe), id: recipe.id)
+                return .none
+                
+            case .openApiProviderPage:
+                UIApplication.shared.open(URL(string: apiProvider)!)
                 return .none
                 
             case .recipe:
