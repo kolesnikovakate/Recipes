@@ -14,6 +14,7 @@ struct RecipesListFeature: ReducerProtocol {
         
         var results: [RecipePreview] = []
         var searchQuery = ""
+        var errorText: String?
     }
     
     enum Action: Equatable {
@@ -62,14 +63,17 @@ struct RecipesListFeature: ReducerProtocol {
                 
             case .searchResponse(.failure):
                 state.results = []
+                state.errorText = "ErrorRecipeSearch".localized
                 return .none
                 
             case let .searchResponse(.success(response)):
                 state.results = response.results
+                state.errorText = nil
                 return .none
                 
             case let .recipeTapped(id: .some(id)):
                 state.selection = Identified(nil, id: id)
+                state.errorText = nil
                 return .task {
                     await .openRecipe(TaskResult {
                         try await self.recipesClient.getRecipe(id)
@@ -79,11 +83,12 @@ struct RecipesListFeature: ReducerProtocol {
                 
             case .recipeTapped(id: .none):
                 state.selection = nil
+                state.errorText = nil
                 return .cancel(id: LoadRecipeID.self)
                 
             case .openRecipe(.failure):
                 state.selection = nil
-                // TODO: show error
+                state.errorText = "ErrorLoadingRecipe".localized
                 return .none
                 
             case let .openRecipe(.success(recipe)):

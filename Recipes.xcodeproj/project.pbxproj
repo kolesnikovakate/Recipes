@@ -28,6 +28,7 @@
 		027D65332951DD6C00003986 /* RecipeFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D65322951DD6C00003986 /* RecipeFeatureTests.swift */; };
 		027D65372951E07C00003986 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D65362951E07C00003986 /* String+Extensions.swift */; };
 		027D65392951E0CE00003986 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 027D65382951E0CE00003986 /* Localizable.strings */; };
+		027D653C2951E47600003986 /* RecipesListErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D653B2951E47600003986 /* RecipesListErrorView.swift */; };
 		02A3FA2F294366EB0015EB0E /* RecipesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA2E294366EB0015EB0E /* RecipesClient.swift */; };
 		02A3FA31294370C50015EB0E /* RecipePreviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA30294370C50015EB0E /* RecipePreviewResponse.swift */; };
 		02A3FA472943F24E0015EB0E /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3FA462943F24E0015EB0E /* AppDIContainer.swift */; };
@@ -86,6 +87,7 @@
 		027D65322951DD6C00003986 /* RecipeFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeatureTests.swift; sourceTree = "<group>"; };
 		027D65362951E07C00003986 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		027D65382951E0CE00003986 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		027D653B2951E47600003986 /* RecipesListErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListErrorView.swift; sourceTree = "<group>"; };
 		02A3FA2E294366EB0015EB0E /* RecipesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesClient.swift; sourceTree = "<group>"; };
 		02A3FA30294370C50015EB0E /* RecipePreviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePreviewResponse.swift; sourceTree = "<group>"; };
 		02A3FA462943F24E0015EB0E /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
@@ -264,7 +266,7 @@
 		027A285229436101003A5BA9 /* RecipesList */ = {
 			isa = PBXGroup;
 			children = (
-				02F5609A2944F8F1007E3C34 /* RecipesListRow.swift */,
+				027D653A2951E46900003986 /* Views */,
 				027A285329436135003A5BA9 /* RecipesListView.swift */,
 				027A285529436199003A5BA9 /* RecipesListFeature.swift */,
 			);
@@ -285,6 +287,15 @@
 				027D65362951E07C00003986 /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		027D653A2951E46900003986 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02F5609A2944F8F1007E3C34 /* RecipesListRow.swift */,
+				027D653B2951E47600003986 /* RecipesListErrorView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		02A3FA342943BAE70015EB0E /* Mocks */ = {
@@ -532,6 +543,7 @@
 				027A283429425200003A5BA9 /* NetworkServiceType.swift in Sources */,
 				027A28362942528E003A5BA9 /* NetworkService.swift in Sources */,
 				027A2830294251CE003A5BA9 /* NetworkConfig.swift in Sources */,
+				027D653C2951E47600003986 /* RecipesListErrorView.swift in Sources */,
 				02F5609E2944F962007E3C34 /* TextModifiers.swift in Sources */,
 				02A3FA2F294366EB0015EB0E /* RecipesClient.swift in Sources */,
 				02A3FA472943F24E0015EB0E /* AppDIContainer.swift in Sources */,
