@@ -88,7 +88,9 @@ final class RecipesListFeatureTests: XCTestCase {
         }
         await mainQueue.advance(by: 1)
         await store.receive(.searchQueryChangeDebounced)
-        await store.receive(.searchResponse(.failure(error)))
+        await store.receive(.searchResponse(.failure(error))) {
+            $0.errorText = "ErrorRecipeSearch".localized
+        }
     }
     
     func testSearchQueryCancelsInFlightSearchRequest() async {
@@ -148,6 +150,30 @@ final class RecipesListFeatureTests: XCTestCase {
         }
         await store.receive(.openRecipe(.failure(error))) {
             $0.selection = nil
+            $0.errorText = "ErrorLoadingRecipe".localized
+        }
+    }
+    
+    func testRecipeLoadErrorReset() async {
+        let error = NetworkError.invalidRequest
+        recipesClient.getRecipeThrowableError = error
+        
+        let store = TestStore(
+            initialState: RecipesListFeature.State(),
+            reducer: RecipesListFeature(recipesClient: recipesClient)
+        )
+        store.dependencies.mainQueue = mainQueue.eraseToAnyScheduler()
+        
+        _ = await store.send(.recipeTapped(id: 1)) {
+            $0.selection = Identified(nil, id: 1)
+        }
+        await store.receive(.openRecipe(.failure(error))) {
+            $0.selection = nil
+            $0.errorText = "ErrorLoadingRecipe".localized
+        }
+        _ = await store.send(.recipeTapped(id: .none)) {
+            $0.selection = nil
+            $0.errorText = nil
         }
     }
 }

@@ -31,8 +31,8 @@ final class RecipesClient: RecipesClientType {
 
 final class MockRecipesClient: RecipesClientType {
     func getMockRecipes() -> RecipePreviewResponse {
-        RecipePreviewResponse(offset: 0, number: 5, results: [RecipePreview(id: 1, title: "Resep Ayam Kuah Santan Pedas Lezat", image: "https://www.kwestiasmaku.com/sites/v123.kwestiasmaku.com/files/lasagne_bolognese_01.jpg"),
-                                                              RecipePreview(id: 1, title: "Resep Ayam Kuah Santan Pedas Lezat", image: "https://www.kwestiasmaku.com/sites/v123.kwestiasmaku.com/files/lasagne_bolognese_01.jpg")],
+        RecipePreviewResponse(offset: 0, number: 5, results: [RecipePreview(id: 1, title: "Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs", image: "https://spoonacular.com/recipeImages/716429-556x370.jpg"),
+                                                              RecipePreview(id: 2, title: "Lasagne bolognese", image: "https://www.kwestiasmaku.com/sites/v123.kwestiasmaku.com/files/lasagne_bolognese_01.jpg")],
                               totalResults: 2)
     }
     

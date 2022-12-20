@@ -29,6 +29,10 @@ struct RecipesListView: View {
                     }
                     .padding(.horizontal, 16)
                     
+                    if let errorText = viewStore.errorText {
+                        RecipesListErrorView(errorText: errorText)
+                    }
+                    
                     List {
                         ForEach(viewStore.results) { recipe in
                             NavigationLink(

@@ -11,6 +11,8 @@
 "Search" = "Search";
 "SearchPlaceholder" = "Pasta, Bruschetta, ...";
 "APIProviderFooterText" = "Recipes API provided by spoonacular";
+"ErrorRecipeSearch" = "Recipe Search error";
+"ErrorLoadingRecipe" = "Error loading the recipe";
 
 // RecipeView
 "Ingredients" = "Ingredients";
