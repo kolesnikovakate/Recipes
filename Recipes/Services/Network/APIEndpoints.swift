@@ -11,9 +11,10 @@ struct APIEndpoints {
     static func getRecipes(with query: String) -> Endpoint<RecipePreviewResponse> {
         Endpoint(path: "/recipes/complexSearch",
                  method: .get,
-                 queryParameters: ["query": query,
+                 queryParameters: ["query": "Pasta",
                                    "sort": "popularity",
-                                   "sortDirection": "asc"])
+                                   "sortDirection": "asc",
+                                   "cuisine": "italian"])
     }
     
     static func getRecipe(by id: Int) -> Endpoint<Recipe> {

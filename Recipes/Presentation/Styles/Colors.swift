@@ -9,4 +9,6 @@ import SwiftUI
 
 extension Color {
     static let background = Color("background")
+    static let textGray = Color("textGray")
+    static let orange = Color("orange")
 }

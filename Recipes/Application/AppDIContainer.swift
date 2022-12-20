@@ -9,12 +9,12 @@ import Foundation
 
 protocol AppDependencyProvider {
     var networkService: NetworkServiceType { get }
-    var recipesClient: RecipesClient { get }
+    var recipesClient: RecipesClientType { get }
 }
 
 final class AppDIContainer: AppDependencyProvider {
     private let apiUrl = "https://api.spoonacular.com/"
-    private let apiKey = "593ba12fa78343e0b42bc41814f313a3"
+    private let apiKey = "dc8c863524f24ef9936e7c2a93f8bd85"
     
     lazy var networkService: NetworkServiceType = {
         let config = NetworkConfig(baseURL: URL(string: apiUrl)!,
@@ -22,5 +22,6 @@ final class AppDIContainer: AppDependencyProvider {
         return NetworkService(config: config)
     }()
     
-    lazy var recipesClient: RecipesClient = RecipesClient(networkService: networkService)
+    lazy var recipesClient: RecipesClientType = MockRecipesClient()
+    // RecipesClient(networkService: networkService)
 }

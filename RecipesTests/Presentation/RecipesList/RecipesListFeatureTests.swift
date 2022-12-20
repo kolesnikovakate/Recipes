@@ -114,4 +114,40 @@ final class RecipesListFeatureTests: XCTestCase {
             $0.results = response.results
         }
     }
+    
+    func testRecipeTapped() async {
+        let recipe = RecipeMock.mock
+        recipesClient.getRecipeReturnValue = recipe
+        
+        let store = TestStore(
+            initialState: RecipesListFeature.State(),
+            reducer: RecipesListFeature(recipesClient: recipesClient)
+        )
+        store.dependencies.mainQueue = mainQueue.eraseToAnyScheduler()
+        
+        _ = await store.send(.recipeTapped(id: recipe.id)) {
+            $0.selection = Identified(nil, id: recipe.id)
+        }
+        await store.receive(.openRecipe(.success(recipe))) {
+            $0.selection = Identified(RecipeFeature.State(recipe: recipe), id: recipe.id)
+        }
+    }
+    
+    func testRecipeTappedLoadFailure() async {
+        let error = NetworkError.invalidRequest
+        recipesClient.getRecipeThrowableError = error
+        
+        let store = TestStore(
+            initialState: RecipesListFeature.State(),
+            reducer: RecipesListFeature(recipesClient: recipesClient)
+        )
+        store.dependencies.mainQueue = mainQueue.eraseToAnyScheduler()
+        
+        _ = await store.send(.recipeTapped(id: 1)) {
+            $0.selection = Identified(nil, id: 1)
+        }
+        await store.receive(.openRecipe(.failure(error))) {
+            $0.selection = nil
+        }
+    }
 }

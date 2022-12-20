@@ -18,7 +18,7 @@ struct RecipesListView: View {
                     HStack {
                         Image(systemName: "magnifyingglass")
                         TextField(
-                            "Pasta, Bruschetta, ...",
+                            "SearchPlaceholder".localized,
                             text: viewStore.binding(
                                 get: \.searchQuery, send: RecipesListFeature.Action.searchQueryChanged
                             )
@@ -31,9 +31,26 @@ struct RecipesListView: View {
                     
                     List {
                         ForEach(viewStore.results) { recipe in
-                            Button(action: { viewStore.send(.searchResultTapped(recipe)) }) {
+                            NavigationLink(
+                                destination: IfLetStore(
+                                    self.store.scope(
+                                        state: \.selection?.value,
+                                        action: RecipesListFeature.Action.recipe
+                                    )
+                                ) {
+                                    RecipeView(store: $0)
+                                } else: {
+                                    ProgressView()
+                                },
+                                tag: recipe.id,
+                                selection: viewStore.binding(
+                                    get: \.selection?.id,
+                                    send: RecipesListFeature.Action.recipeTapped(id:)
+                                )
+                            ) {
                                 RecipesListRow(recipe: recipe)
                             }
+                            .buttonStyle(.plain)
                             .listRowBackground(Color.background)
                             .listRowSeparator(.hidden)
                             .listRowInsets(EdgeInsets(top: 8,
@@ -45,16 +62,17 @@ struct RecipesListView: View {
                     .scrollContentBackground(.hidden)
                     .listStyle(.plain)
                     
-                    Button("Recipes API provided by spoonacular") {
+                    Button("APIProviderFooterText".localized) {
                         UIApplication.shared.open(URL(string: "https://spoonacular.com/food-api")!)
                     }
                     .foregroundColor(.gray)
                     .padding(.all, 16)
                 }
                 .background(Color.background)
-                .navigationTitle("Search")
+                .navigationTitle("Search".localized)
             }
             .navigationViewStyle(.stack)
+            .accentColor(.orange)
             .onAppear {
                 viewStore.send(.reload)
             }
